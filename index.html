@@ -1,559 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مركز د. أحمد عطية للجراحة والتجميل وزراعة الشعر والأسنان</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f8f9fa;
-        }
-
-        header {
-            background: linear-gradient(135deg, #0066cc 0%, #004c99 100%);
-            color: white;
-            padding: 2rem 0;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .header-content {
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            opacity: 0.95;
-            margin-bottom: 1rem;
-        }
-
-        .social-links {
-            margin-top: 1rem;
-        }
-
-        .social-links a {
-            display: inline-block;
-            margin: 0 10px;
-            color: white;
-            text-decoration: none;
-            font-size: 2rem;
-            transition: transform 0.3s ease;
-        }
-
-        .social-links a:hover {
-            transform: scale(1.2);
-        }
-
-        .clinic-hours {
-            background: #f8f9fa;
-            padding: 4rem 0;
-        }
-
-        .clinic-hours h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            color: #0066cc;
-            margin-bottom: 3rem;
-        }
-
-        .hours-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .hours-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border-right: 4px solid #0066cc;
-        }
-
-        .hours-card h3 {
-            color: #0066cc;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .hours-card p {
-            color: #666;
-            line-height: 1.8;
-            margin: 0.5rem 0;
-        }
-
-        .insurance {
-            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
-        }
-
-        .insurance h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-
-        .insurance p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-        }
-
-        .hero {
-            background: linear-gradient(135deg, #00b4db 0%, #0083b0 100%);
-            color: white;
-            padding: 4rem 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="rgba(255,255,255,0.1)"/></svg>') repeat-x;
-            opacity: 0.3;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: white;
-            color: #0066cc;
-            padding: 1rem 3rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(0,0,0,0.3);
-        }
-
-        .services {
-            padding: 4rem 0;
-            background: white;
-        }
-
-        .services h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            color: #0066cc;
-            margin-bottom: 3rem;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .service-card {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 2rem;
-            border-radius: 20px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0,102,204,0.2);
-            border-color: #0066cc;
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .service-card h3 {
-            color: #0066cc;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .service-card p {
-            color: #666;
-            line-height: 1.8;
-        }
-
-        .contact {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 4rem 0;
-        }
-
-        .contact h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .contact-card {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: all 0.3s ease;
-        }
-
-        .contact-card:hover {
-            background: rgba(255,255,255,0.2);
-            transform: scale(1.05);
-        }
-
-        .contact-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .contact-card h3 {
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .contact-card a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: opacity 0.3s;
-        }
-
-        .contact-card a:hover {
-            opacity: 0.8;
-        }
-
-        .location {
-            background: white;
-            padding: 4rem 0;
-        }
-
-        .location h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            color: #0066cc;
-            margin-bottom: 2rem;
-        }
-
-        .location-details {
-            background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            border-right: 5px solid #0066cc;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .location-details p {
-            font-size: 1.2rem;
-            color: #333;
-            line-height: 2;
-        }
-
-        .location-icon {
-            font-size: 3rem;
-            color: #0066cc;
-            margin-bottom: 1rem;
-        }
-
-        footer {
-            background: #1a1a1a;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-        }
-
-        footer p {
-            margin: 0.5rem 0;
-        }
-
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 30px;
-            left: 30px;
-            background-color: #25d366;
-            color: white;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: 2px 2px 20px rgba(37,211,102,0.5);
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 1.8rem;
-            }
-
-            .hero h2 {
-                font-size: 1.8rem;
-            }
-
-            .services h2, .contact h2, .location h2 {
-                font-size: 1.8rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <h1>🏥 مركز د. أحمد عطية</h1>
-                <p class="subtitle">أفضل مركز للجراحة والتجميل وزراعة الشعر والأسنان</p>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/share/1bJBjsUZ3g/" target="_blank" title="تابعنا على فيسبوك">📘</a>
-                    <a href="https://m.facebook.com/profile.php?id=100086470352878" target="_blank" title="صفحتنا على فيسبوك">👤</a>
-                    <a href="https://www.facebook.com/share/178jVutopP/" target="_blank" title="زراعة الشعر">💈</a>
-                    <a href="https://www.facebook.com/share/1AESvSaFbA/" target="_blank" title="خدماتنا">🏥</a>
-                    <a href="https://www.facebook.com/share/17nc8SqMhE/" target="_blank" title="الجراحة والتجميل">✨</a>
-                    <a href="https://sites.google.com/view/hair-transplantation-alex/home" target="_blank" title="موقعنا">🌐</a>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h2>جمالك وصحتك في أيدٍ أمينة</h2>
-                <p>نقدم أحدث التقنيات في الجراحة التجميلية وزراعة الشعر والأسنان</p>
-                <a href="tel:035557512" class="cta-button">احجز موعدك الآن</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="services">
-        <div class="container">
-            <h2>خدماتنا المتميزة</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <span class="service-icon">💉</span>
-                    <h3>الجراحة التجميلية</h3>
-                    <p>شفط الدهون • شد الترهلات • حقن البلازما • الفيللر • البوتكس</p>
-                </div>
-
-                <div class="service-card">
-                    <span class="service-icon">👨</span>
-                    <h3>زراعة الشعر</h3>
-                    <p>تقنيات متطورة لزراعة الشعر الطبيعي بنتائج مضمونة والعناية الشاملة بالشعر</p>
-                </div>
-
-                <div class="service-card">
-                    <span class="service-icon">😁</span>
-                    <h3>زراعة الأسنان</h3>
-                    <p>زراعة الأسنان بأحدث التقنيات لابتسامة جميلة وثقة أكبر</p>
-                </div>
-
-                <div class="service-card">
-                    <span class="service-icon">🏥</span>
-                    <h3>الجراحة العامة</h3>
-                    <p>المرارة بالمنظار • الزائدة الدودية • الفتاق • الشرج والبواسير • الناسور</p>
-                </div>
-
-                <div class="service-card">
-                    <span class="service-icon">🦶</span>
-                    <h3>جراحات متخصصة</h3>
-                    <p>القدم السكري • جراحة اليد والأوتار • دوالي الخصية • دوالي الساقين</p>
-                </div>
-
-                <div class="service-card">
-                    <span class="service-icon">👨‍⚕️</span>
-                    <h3>فريق متخصص</h3>
-                    <p>فريق طبي على أعلى مستوى من الخبرة والكفاءة في جميع التخصصات</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="clinic-hours">
-        <div class="container">
-            <h2>عياداتنا ومواعيدها</h2>
-            <div class="hours-grid">
-                <div class="hours-card">
-                    <h3>🏥 عيادة د. أحمد عطية - سيدي بشر بحري</h3>
-                    <p><strong>استشاري الجراحة العامة وجراحة التجميل وزراعة الشعر</strong></p>
-                    <p><strong>المواعيد: من 4 إلى 7 مساءً</strong></p>
-                    <p>📞 002035557512</p>
-                    <p>📱 00201212616606</p>
-                    <p style="margin-top: 1rem;"><strong>📍 العنوان:</strong></p>
-                    <p style="font-size: 0.95rem;">تقاطع ش الأمان مع ش 18 متفرع من جمال عبد الناصر</p>
-                    <p style="font-size: 0.95rem;">فوق نفق سيدي بشر بحري أمام دنتو سكان للأشعة</p>
-                    <p style="font-size: 0.95rem;">بجوار بازار زين وملابس أيوب وحلواني لي لودي وفوق مسجد العزيز</p>
-                    <p><a href="https://www.google.com/maps/place/6+Al+Aman,+Sidi+Beshr+Qebli,+Montaza+1,+Alexandria+Governorate+5517134/@31.2594477,29.9906846,17z/data=!4m6!3m5!1s0x14f5dabba7605c8d:0x6cc3c07e17d449e0!8m2!3d31.2588378!4d29.9894883!16s%2Fg%2F11c4swnhhz?entry=ttu&g_ep=EgoyMDI1MDgxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="color: #0066cc; text-decoration: none; font-weight: bold;">📍 عرض على الخريطة</a></p>
-                </div>
-
-                <div class="hours-card">
-                    <h3>🏥 عيادة الحضرة القبلية</h3>
-                    <p><strong>📍 بجوار جراج البلدية أمام مكتب البريد على الترام</strong></p>
-                    <p>📱 01212616606</p>
-                    <p><a href="https://www.google.com/maps/place/31.200755,+29.930274/@31.2007186,29.9303197,21z" target="_blank" style="color: #0066cc; text-decoration: none; font-weight: bold;">📍 عرض على الخريطة</a></p>
-                    <p style="margin-top: 1rem;"><strong>المواعيد:</strong></p>
-                    <p>🦷 <strong>عيادة الأسنان:</strong> يومياً من 7 إلى 9 مساءً (ماعدا الجمعة)</p>
-                    <p>📱 01016814821</p>
-                    <p>💉 <strong>عيادة الجراحة:</strong> يومياً من 9 إلى 11 مساءً (ماعدا الجمعة)</p>
-                    <p>🏥 <strong>باطنة وكلى وحميات وجهاز هضمي:</strong> الأحد والأربعاء من 7 إلى 9 مساءً</p>
-                    <p>🔬 <strong>التحاليل الطبية:</strong> يومياً من 4 إلى 10 مساءً (ماعدا الجمعة)</p>
-                </div>
-
-                <div class="hours-card">
-                    <h3>🦷 عيادة طب وجراحة الفم وزراعة الأسنان - سيدي بشر</h3>
-                    <p><strong>📍 العنوان:</strong></p>
-                    <p style="font-size: 0.95rem;">تقاطع ش الأمان مع ش 18 متفرع من جمال عبد الناصر</p>
-                    <p style="font-size: 0.95rem;">فوق نفق سيدي بشر بحري أمام دنتو سكان للأشعة</p>
-                    <p><strong>المواعيد: من 4 إلى 7 مساءً</strong></p>
-                    <p>📱 201016814821+</p>
-                    <p>📞 2035557512+</p>
-                    <p>📱 201212616606+</p>
-                    <p><a href="https://www.google.com/maps/place/6+Al+Aman,+Sidi+Beshr+Qebli,+Montaza+1,+Alexandria+Governorate+5517134/@31.2594477,29.9906846,17z/data=!4m6!3m5!1s0x14f5dabba7605c8d:0x6cc3c07e17d449e0!8m2!3d31.2588378!4d29.9894883!16s%2Fg%2F11c4swnhhz?entry=ttu&g_ep=EgoyMDI1MDgxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="color: #0066cc; text-decoration: none; font-weight: bold;">📍 عرض على الخريطة</a></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="insurance">
-        <div class="container">
-            <h3>✅ نرحب بعملاء شركات التأمين الطبي</h3>
-            <p>Misr Health Care • مصر للتأمين • مصر هيلث كير • AMIS • نقابة التجاريين • Reliance • Prime Health • ريليانس • برايم هيلث</p>
-        </div>
-    </section>
-
-    <section class="location">
-        <div class="container">
-            <h2>عناويننا</h2>
-            <div class="location-details">
-                <div class="location-icon">📍</div>
-                <p><strong>عيادة د. أحمد عطية - سيدي بشر بحري</strong></p>
-                <p>استشاري الجراحة العامة وجراحة التجميل وزراعة الشعر</p>
-                <p>تقاطع ش الأمان مع ش 18 متفرع من جمال عبد الناصر</p>
-                <p>فوق نفق سيدي بشر بحري أمام دنتو سكان للأشعة</p>
-                <p><a href="https://www.google.com/maps/place/6+Al+Aman,+Sidi+Beshr+Qebli,+Montaza+1,+Alexandria+Governorate+5517134/@31.2594477,29.9906846,17z/data=!4m6!3m5!1s0x14f5dabba7605c8d:0x6cc3c07e17d449e0!8m2!3d31.2588378!4d29.9894883!16s%2Fg%2F11c4swnhhz?entry=ttu&g_ep=EgoyMDI1MDgxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="color: #0066cc; text-decoration: none; font-weight: bold;">📍 عرض على الخريطة</a></p>
-            </div>
-            <div class="location-details" style="margin-top: 2rem;">
-                <div class="location-icon">📍</div>
-                <p><strong>عيادة الحضرة القبلية</strong></p>
-                <p>بجوار جراج البلدية أمام مكتب البريد على الترام</p>
-                <p>📱 01212616606</p>
-                <p><a href="https://www.google.com/maps/place/31.200755,+29.930274/@31.2007186,29.9303197,21z" target="_blank" style="color: #0066cc; text-decoration: none; font-weight: bold;">📍 عرض على الخريطة</a></p>
-            </div>
-            <div class="location-details" style="margin-top: 2rem;">
-                <div class="location-icon">📍</div>
-                <p><strong>عيادة طب وجراحة الفم وزراعة الأسنان - سيدي بشر بحري</strong></p>
-                <p>تقاطع ش الأمان مع ش 18 متفرع من جمال عبد الناصر</p>
-                <p>فوق نفق سيدي بشر بحري أمام دنتو سكان للأشعة</p>
-                <p><a href="https://www.google.com/maps/place/6+Al+Aman,+Sidi+Beshr+Qebli,+Montaza+1,+Alexandria+Governorate+5517134/@31.2594477,29.9906846,17z/data=!4m6!3m5!1s0x14f5dabba7605c8d:0x6cc3c07e17d449e0!8m2!3d31.2588378!4d29.9894883!16s%2Fg%2F11c4swnhhz?entry=ttu&g_ep=EgoyMDI1MDgxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="color: #0066cc; text-decoration: none; font-weight: bold;">📍 عرض على الخريطة</a></p>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact">
-        <div class="container">
-            <h2>تواصل معنا</h2>
-            <div class="contact-info">
-                <div class="contact-card">
-                    <span class="contact-icon">🦷</span>
-                    <h3>عيادة طب وجراحة الفم وزراعة الأسنان</h3>
-                    <p style="margin-bottom: 0.5rem;"><strong>عيادة سيدي بشر بحري - الإسكندرية</strong></p>
-                    <p style="margin-bottom: 0.5rem; font-size: 0.9rem;">تقاطع ش الأمان مع ش 18 متفرع من جمال عبد الناصر</p>
-                    <p style="margin-bottom: 0.5rem; font-size: 0.9rem;">فوق نفق سيدي بشر بحري أمام دنتو سكان للأشعة</p>
-                    <p style="margin-bottom: 1rem; font-size: 0.9rem;">المواعيد من 4 إلى 7 مساءً</p>
-                    <a href="tel:+201016814821">201016814821+</a>
-                    <br>
-                    <a href="tel:+2035557512">2035557512+</a>
-                    <br>
-                    <a href="tel:+201212616606">201212616606+</a>
-                    <br><br>
-                    <a href="https://www.google.com/maps/place/6+Al+Aman,+Sidi+Beshr+Qebli,+Montaza+1,+Alexandria+Governorate+5517134/@31.2594477,29.9906846,17z/data=!4m6!3m5!1s0x14f5dabba7605c8d:0x6cc3c07e17d449e0!8m2!3d31.2588378!4d29.9894883!16s%2Fg%2F11c4swnhhz?entry=ttu&g_ep=EgoyMDI1MDgxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="color: white; text-decoration: underline;">📍 عرض على الخريطة</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <a href="https://wa.me/201212616606" class="whatsapp-float" target="_blank" title="تواصل عبر واتساب">
-        💬
-    </a>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 مركز د. أحمد عطية للجراحة والتجميل وزراعة الشعر والأسنان</p>
-            <p>جميع الحقوق محفوظة</p>
-        </div>
-    </footer>
-</body>
-</html>
